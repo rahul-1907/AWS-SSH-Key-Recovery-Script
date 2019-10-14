@@ -1,0 +1,12 @@
+1. detached root volume.
+2. attached volume to running instance (instance must run on same AZ).
+3. Commands
+    #lsblk
+    #mkdir -p /TestVol
+    #mount -o nouuid /dev/xvdf2 /TestVol
+    #df -h
+    # cat /home/ec2-user/.ssh/authorized_key >> /TestVol/home/ec2-user/.ssh/authorized_key
+    #umount /TestVol
+    #df -h
+4. Attached to original Instance.
+    
