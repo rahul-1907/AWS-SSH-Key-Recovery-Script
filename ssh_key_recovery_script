@@ -1,0 +1,21 @@
+Content-Type: multipart/mixed; boundary="//"
+MIME-Version: 1.0
+
+--//
+Content-Type: text/cloud-config; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: attachment; filename="cloud-config.txt"
+
+#cloud-config
+cloud_final_modules:
+- [scripts-user, always]
+
+--//
+Content-Type: text/x-shellscript; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: attachment; filename="userdata.txt"
+#!/bin/bash
+/bin/echo -e "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCQzw6vcdrdMfjbnGyIapC+IZAJSM4jmVwasMbNQhgHSNpQQRTaFU/I7tPOaLpvTc3QSkqE+6YC6E3IkLhcmQE6xABJdpyB92CnL84PudiZTRbRXxy8K+v89GYNLwe6dETfnifQNSHlOrJkiag67YgR3rXJ3mt5BJsY5VnYLh8dA8iXp9DkSTYRYs2Vkm6hqtJ0+6Y/rYY+cXu/8gddY+sCGlLx5mr1NoHlyCKun+PTu5lqPTIYcmaATsNgJ7R02R7qLjcTmyJ2iH/PYsTDw3dT+MI58a1gKulj+82FWkVA0Jao08kQXCOV6S1PorRwd7Td5vlpz5thIE5+b8QADvIv" >> /home/ec2-user/.ssh/authorized_keys
+--//
